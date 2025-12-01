@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import axios from "axios"
 
-export default function Store() {
+export default function Shop() {
     const [products, setProducts] = useState([])   // State to hold the list of products fetched from the API
 
-    useEffect(() => {
-        // Fetch products from the API when the component mounts
-        fetch("https://fakestoreapi.com/products")
-            .then(res => res.json())   // Parse the JSON response when the fetch is complete
-            .then(data => setProducts(data))  // Update the state with the fetched products
-            .catch(err => console.error("Error fetching products:", err))
+    useEffect(() => {   //useEffect hook to perform side effects in function components
+        // using axios to fetch products from the API when the component mounts
+        axios.get("https://fakestoreapi.com/products").then(res => {
+            setProducts(res.data)   // Update the state with the fetched products
+        }).catch(err => {
+            console.error("Error fetching products:", err)
+        })
     }, [])  // Empty dependency array ensures this runs only once on mount
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import logo from './assets/shopping-logo.svg';
-import Store from './pages/Store';
+import Shop from './pages/Shop';
 import Home from './pages/Home';
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Store />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/link" element={Link} />
         <Route path="/logo" element={logo} />
       </Routes>
