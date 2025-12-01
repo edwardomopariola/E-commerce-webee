@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function Product() {
-    const { id } = useParams();
+    const { id } = useParams();  // Get the product ID from the URL parameters
     const [product, setProduct] = useState(null);  // State to hold the product details fetched from the API
 
-    useEffect(() => {
+    useEffect(() => {  //useEffect hook to perform side effects in function components
         // Fetch product details from the API when the component mounts or when the id changes
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(res => res.json())   // Parse the JSON response when the fetch is complete

@@ -3,16 +3,11 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className={{ textAlign: "center", marginTop: "50px" }}>
         <Link to="/shop" >
-            <img 
-                src={logo} 
-                alt="Shopping Logo" 
-                style={{ width: "200px", cursor: "pointer" }}
-            />
+            <img src={logo} alt="Shopping Logo" style={{ width: "200px", cursor: "pointer" }}/>
         </Link>
-        <h1>Welcome!!!</h1>
-        <h2>Click the logo to start shopping</h2>
+        <h1 className='mt-6 text-2xl font-semibold'>Welcome!!! - Click the logo to start shopping</h1>
     </div>
   );
 }
